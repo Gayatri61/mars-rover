@@ -2,7 +2,7 @@ package com.gayatri.marsrover.dto;
 
 import java.io.Serializable;
 
-import com.gayatri.marsrover.enums.Directions;
+import com.gayatri.marsrover.enums.Direction;
 
 public class MarsRoverResponse implements Serializable{
 
@@ -15,7 +15,7 @@ public class MarsRoverResponse implements Serializable{
 	
 	private float roverPositionY;
 	
-	private Directions direction;
+	private Direction direction;
 
 	public float getRoverPositionX() {
 		return roverPositionX;
@@ -33,11 +33,11 @@ public class MarsRoverResponse implements Serializable{
 		this.roverPositionY = roverPositionY;
 	}
 
-	public Directions getDirection() {
+	public Direction getDirection() {
 		return direction;
 	}
 
-	public void setDirection(Directions direction) {
+	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
 	
