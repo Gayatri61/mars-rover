@@ -54,5 +54,20 @@ public class MarsRoverServiceTest {
 		marsRoverRequest=new MarsRoverRequest(5, 5, 1, 2, "N", "KKKKKKKK");
 		assertThrows(InvalidInputException.class, ()->{marsRoverServiceImpl.marsRoverFunction(marsRoverRequest);});
 	}
+	
+	@Test
+	public void testMarsRoverFunction_crossingLimit() {
+		marsRoverRequest=new MarsRoverRequest(5, 5, 1, 2, "N", "LMLMLMLMMMMMMM");
+		assertThrows(InvalidInputException.class, ()->{marsRoverServiceImpl.marsRoverFunction(marsRoverRequest);});
+		
+		marsRoverRequest=new MarsRoverRequest(5, 5, 1, 2, "W", "LMLMLMLMMMMMMM");
+		assertThrows(InvalidInputException.class, ()->{marsRoverServiceImpl.marsRoverFunction(marsRoverRequest);});
+		
+		marsRoverRequest=new MarsRoverRequest(5, 5, 1, 2, "S", "LMLMLMLMMMMMMM");
+		assertThrows(InvalidInputException.class, ()->{marsRoverServiceImpl.marsRoverFunction(marsRoverRequest);});
+		
+		marsRoverRequest=new MarsRoverRequest(5, 5, 1, 2, "E", "LMLMLMLMMMMMMM");
+		assertThrows(InvalidInputException.class, ()->{marsRoverServiceImpl.marsRoverFunction(marsRoverRequest);});
+	}
 
 }
