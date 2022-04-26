@@ -19,9 +19,25 @@ public class MarsRoverRequest implements Serializable{
 	
 	private float roverPositionY;
 	
-	private Direction direction;
+	private String direction;
 	
 	private String Instruction;
+	
+	
+
+	public MarsRoverRequest(float upperRightX, float upperRightY, float roverPositionX, float roverPositionY,
+			String direction, String instruction) {
+		super();
+		this.upperRightX = upperRightX;
+		this.upperRightY = upperRightY;
+		this.roverPositionX = roverPositionX;
+		this.roverPositionY = roverPositionY;
+		this.direction = direction;
+		Instruction = instruction;
+	}
+
+	public MarsRoverRequest() {
+	}
 
 	public float getUpperRightX() {
 		return upperRightX;
@@ -55,11 +71,11 @@ public class MarsRoverRequest implements Serializable{
 		this.roverPositionY = roverPositionY;
 	}
 
-	public Direction getDirection() {
+	public String getDirection() {
 		return direction;
 	}
 
-	public void setDirection(Direction direction) {
+	public void setDirection(String direction) {
 		this.direction = direction;
 	}
 

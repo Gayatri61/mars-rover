@@ -10,14 +10,14 @@ public class Move implements Operation{
 
 	@Override
 	public MarsRoverRequest doAction(MarsRoverRequest marsRoverRequest) {
-		
-        if(marsRoverRequest.getDirection() == Direction.N) {
+		Direction direction=Direction.getDirection(marsRoverRequest.getDirection());
+        if(direction == Direction.NORTH) {
             marsRoverRequest.setRoverPositionY(marsRoverRequest.getRoverPositionY()+1);
-        } else if(marsRoverRequest.getDirection() == Direction.S) {
+        } else if(direction == Direction.SOUTH) {
         	marsRoverRequest.setRoverPositionY(marsRoverRequest.getRoverPositionY()-1);
-        } else if(marsRoverRequest.getDirection() == Direction.E) {
+        } else if(direction == Direction.EAST) {
         	marsRoverRequest.setRoverPositionX(marsRoverRequest.getRoverPositionX()+1);
-        } else if(marsRoverRequest.getDirection() == Direction.W) {
+        } else if(direction == Direction.WEST) {
         	marsRoverRequest.setRoverPositionX(marsRoverRequest.getRoverPositionX()-1);
         }
         return marsRoverRequest;

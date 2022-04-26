@@ -2,23 +2,20 @@ package com.gayatri.marsrover.factory;
 
 import org.springframework.stereotype.Component;
 
-import com.gayatri.marsrover.exception.InvalidInputException;
+import com.gayatri.marsrover.enums.Instruction;
 
 @Component
 public class OperationFactory {
 	
-	   public Operation getMovment (String operationInstruction){
-		      if(operationInstruction== null || operationInstruction.isEmpty()){
-		         throw new InvalidInputException("Please provide input in given format only");
-			   // throw exception
-		      }		
-		      if(operationInstruction.equalsIgnoreCase("L")){
+	   public Operation getOperation (Instruction operationInstruction){
+		      	
+		      if(Instruction.LEFT.equals(operationInstruction)){
 		         return new Left();
 		         
-		      } else if(operationInstruction.equalsIgnoreCase("R")){
+		      } else if(Instruction.RIGHT.equals(operationInstruction)){
 		         return new Right();
 		         
-		      } else if(operationInstruction.equalsIgnoreCase("M")){
+		      } else if(Instruction.MOVE.equals(operationInstruction)){
 		         return new Move();
 		      }
 		      

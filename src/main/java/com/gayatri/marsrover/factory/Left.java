@@ -10,17 +10,17 @@ public class Left implements Operation{
 
 	@Override
 	public MarsRoverRequest doAction(MarsRoverRequest marsRoverRequest ) {
-		Direction direction=marsRoverRequest.getDirection();
-        if (direction == Direction.N) {
-            direction = Direction.W;
-        } else if (direction == Direction.S) {
-            direction = Direction.E;
-        } else if (direction == Direction.E) {
-            direction = Direction.N;
-        } else if (direction == Direction.W) {
-            direction = Direction.S;
+		Direction direction=Direction.getDirection(marsRoverRequest.getDirection());
+        if (direction == Direction.NORTH) {
+            direction = Direction.WEST;
+        } else if (direction == Direction.SOUTH) {
+            direction = Direction.EAST;
+        } else if (direction == Direction.EAST) {
+            direction = Direction.NORTH;
+        } else if (direction == Direction.WEST) {
+            direction = Direction.SOUTH;
         }
-        marsRoverRequest.setDirection(direction);
+        marsRoverRequest.setDirection(direction.value);
 		return marsRoverRequest;
 		
 	}
